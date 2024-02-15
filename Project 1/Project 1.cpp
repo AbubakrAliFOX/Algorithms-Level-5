@@ -7,10 +7,13 @@ int main()
 {
     MydbLinkedList<int> MyList;
 
-    MyList.InsertAtBeginning(5);
-    MyList.InsertAtBeginning(10);
-    MyList.InsertAtBeginning(11);
-    MyList.PrintList();
+    MyList.InsertAtEnd(1);
+    MyList.InsertAtEnd(2);
+    MyList.InsertAtEnd(3);
 
-    MydbLinkedList<int>::Node *N1 = MyList.Find(6);
+    MydbLinkedList<int>::Node *N1 = MyList.Find(2);
+
+    MyList.InsertAfter(N1, 20);
+    
+    MyList.PrintList();
 }
