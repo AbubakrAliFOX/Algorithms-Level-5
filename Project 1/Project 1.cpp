@@ -14,8 +14,11 @@ int main()
     clsDblLinkedList<int>::Node *N1 = MyList.Find(2);
 
     MyList.InsertAfter(N1, 20);
-    
+
     MyList.PrintList();
 
     cout << "Size is:" << MyList.Size() << endl;
+    cout << MyList.IsEmpty() << endl;
+    MyList.Clear();
+    cout << MyList.IsEmpty() << endl;
 }
