@@ -96,6 +96,19 @@ public:
         _Size++;
     }
 
+    bool InsertAfter(int idx, T value)
+    {
+        Node *ItemNode = GetNode(idx);
+        if (ItemNode != NULL)
+        {
+            InsertAfter(ItemNode,value);
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+
     void InsertAtEnd(T value)
     {
 
@@ -260,15 +273,30 @@ public:
             {
                 return Current;
             }
-            
+
             Counter++;
             Current = Current->next;
         }
         return NULL;
     }
 
-    T GetItem (int idx) {
+    T GetItem(int idx)
+    {
         Node *ItemNode = GetNode(idx);
-        return ItemNode == NULL? NULL: ItemNode->value;
+        return ItemNode == NULL ? NULL : ItemNode->value;
+    }
+
+    bool UpdateItem(int idx, T newValue)
+    {
+        Node *ItemNode = GetNode(idx);
+        if (ItemNode == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            ItemNode->value = newValue;
+            return true;
+        }
     }
 };
