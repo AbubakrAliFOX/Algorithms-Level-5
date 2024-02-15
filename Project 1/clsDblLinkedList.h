@@ -248,4 +248,24 @@ public:
             head = temp->prev;
         }
     }
+
+    Node *GetNode(int idx)
+    {
+        Node *Current = head;
+        int Counter = 0;
+
+        while (Current != NULL)
+        {
+            if (Counter == idx)
+            {
+                return Current;
+            }
+            
+            Counter++;
+            Current = Current->next;
+        }
+        
+        
+        return NULL;
+    }
 };
