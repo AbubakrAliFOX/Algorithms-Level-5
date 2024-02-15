@@ -264,8 +264,11 @@ public:
             Counter++;
             Current = Current->next;
         }
-        
-        
         return NULL;
+    }
+
+    T GetItem (int idx) {
+        Node *ItemNode = GetNode(idx);
+        return ItemNode == NULL? NULL: ItemNode->value;
     }
 };

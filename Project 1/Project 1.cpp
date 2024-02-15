@@ -14,6 +14,8 @@ int main()
     MyList.InsertAtEnd(5);
 
     MyList.PrintList();
-    clsDblLinkedList<int>::Node *N1 = MyList.GetNode(2);
-    cout << "Found Node:" << N1->value << endl; 
+    clsDblLinkedList<int>::Node *N1;
+    N1 = MyList.GetNode(2);
+
+    cout << "Found Node:" << MyList.GetItem(5) << endl; 
 }
