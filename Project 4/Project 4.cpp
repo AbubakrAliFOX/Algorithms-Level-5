@@ -29,6 +29,10 @@ int main()
 
     // MyDynamicArray.DeleteItem(20);
 
-    cout << MyDynamicArray.DeleteItem(20) << endl;
+    // cout << MyDynamicArray.DeleteItem(20) << endl;
+    // MyDynamicArray.PrintList();
+
+    cout << MyDynamicArray.InsertAt(2, 200) << endl;
     MyDynamicArray.PrintList();
+    
 }

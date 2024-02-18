@@ -122,7 +122,7 @@ public:
         {
             return false;
         }
-        
+
         _Size--;
         _TempArray = new T[_Size];
 
@@ -170,6 +170,37 @@ public:
     {
         int idx = Find(value);
 
-        return idx != -1 ? DeleteItemAt(Find(value)) : false; 
+        return idx != -1 ? DeleteItemAt(Find(value)) : false;
+    }
+
+    bool InsertAt(int idx, T value)
+    {
+        if (idx < 0 || idx > (_Size + 1))
+        {
+            return false;
+        }
+        
+        _Size++;
+        _TempArray = new T[_Size];
+
+        // Before indx
+        for (int i = 0; i < idx; i++)
+        {
+            _TempArray[i] = OriginalArray[i];
+        }
+
+        // At indx
+        _TempArray[idx] = value;
+
+        // After indx
+        for (int i = idx + 1; i < _Size; i++)
+        {
+            _TempArray[i] = OriginalArray[i - 1];
+        }
+
+        delete[] OriginalArray;
+        OriginalArray = _TempArray;
+
+        return true;
     }
 };
