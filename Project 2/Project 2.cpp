@@ -1,10 +1,11 @@
 #include <iostream>
 #include "clsMyQueue.h"
+#include "clsMyStack.h"
 using namespace std;
 
 int main()
 {
-    clsMyQueue<int> Queue;
+    clsMyStack<int> Queue;
 
     Queue.push(10);
     Queue.push(20);
