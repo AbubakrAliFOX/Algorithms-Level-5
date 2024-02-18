@@ -40,4 +40,28 @@ public:
     {
         _List.DeleteLastNode();
     }
+
+    T GetItem (int idx) {
+        return _List.GetItem(idx);
+    }
+
+    void Reverse () {
+        _List.Reverse();
+    }
+
+    void UpdateItem (int idx, T newValue) {
+        _List.UpdateItem(idx, newValue);
+    }
+
+    void InsertAfter (int idx, T value) {
+        _List.InsertAfter(idx, value);
+    }
+
+    void InsertAtFront (T value) {
+        _List.InsertAtBeginning(value);
+    }
+
+    void Clear() {
+        _List.Clear();
+    }
 };
