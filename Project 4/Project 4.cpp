@@ -1,5 +1,5 @@
-//ProgrammingAdvices.com
-//Mohammed Abu-Hadhoud
+// ProgrammingAdvices.com
+// Mohammed Abu-Hadhoud
 
 #include <iostream>
 #include "clsDynamicArray.h"
@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 
-    clsDynamicArray <int> MyDynamicArray(5);
+    clsDynamicArray<int> MyDynamicArray(5);
 
     MyDynamicArray.SetItem(0, 10);
     MyDynamicArray.SetItem(1, 20);
@@ -23,4 +23,6 @@ int main()
 
     MyDynamicArray.PrintList();
 
+    MyDynamicArray.Resize(20);
+    MyDynamicArray.PrintList();
 }

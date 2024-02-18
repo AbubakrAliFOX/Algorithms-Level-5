@@ -9,7 +9,7 @@ class clsDynamicArray
 
 protected:
     int _Size = 0;
-
+    T* _TempArray;
 
 public:
     T* OriginalArray;
@@ -35,7 +35,7 @@ public:
     bool SetItem(int index, T Value)
     {
 
-        if (index >= _Size || _Size < 0)
+        if (index >= _Size || _Size <0)
         {
             return false;
         }
@@ -70,6 +70,32 @@ public:
 
     }
 
+    void Resize(int NewSize)
+    {
+       
+        if (NewSize < 0)
+        {
+            NewSize = 0;
+        };
+
+        _TempArray = new T[NewSize];
+
+        //limit the original size to the new size if it is less.
+        if (NewSize < _Size)
+            _Size = NewSize;
+
+        //copy all data from original array until the size
+        for (int i = 0; i < _Size; i++)
+        {
+            _TempArray[i] = OriginalArray[i];
+        }
+
+        _Size = NewSize;
+
+        delete[] OriginalArray;
+        OriginalArray = _TempArray;
+      
+    }
 
 
 };
