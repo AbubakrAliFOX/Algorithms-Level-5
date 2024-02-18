@@ -9,10 +9,10 @@ class clsDynamicArray
 
 protected:
     int _Size = 0;
-    T* _TempArray;
+    T *_TempArray;
 
 public:
-    T* OriginalArray;
+    T *OriginalArray;
 
     clsDynamicArray(int Size = 0)
     {
@@ -22,29 +22,25 @@ public:
         _Size = Size;
 
         OriginalArray = new T[_Size];
-
     }
 
     ~clsDynamicArray()
     {
 
-        delete[]  OriginalArray;
-
+        delete[] OriginalArray;
     }
 
     bool SetItem(int index, T Value)
     {
 
-        if (index >= _Size || _Size <0)
+        if (index >= _Size || _Size < 0)
         {
             return false;
         }
 
         OriginalArray[index] = Value;
         return true;
-
     }
-
 
     int Size()
     {
@@ -54,7 +50,6 @@ public:
     bool IsEmpty()
     {
         return (_Size == 0 ? true : false);
-
     }
 
     void PrintList()
@@ -67,12 +62,11 @@ public:
         }
 
         cout << "\n";
-
     }
 
     void Resize(int NewSize)
     {
-       
+
         if (NewSize < 0)
         {
             NewSize = 0;
@@ -80,11 +74,11 @@ public:
 
         _TempArray = new T[NewSize];
 
-        //limit the original size to the new size if it is less.
+        // limit the original size to the new size if it is less.
         if (NewSize < _Size)
             _Size = NewSize;
 
-        //copy all data from original array until the size
+        // copy all data from original array until the size
         for (int i = 0; i < _Size; i++)
         {
             _TempArray[i] = OriginalArray[i];
@@ -94,9 +88,29 @@ public:
 
         delete[] OriginalArray;
         OriginalArray = _TempArray;
-      
     }
 
+    void Reverse()
+    {
+        _TempArray = new T[_Size];
 
+        for (int i = 0; i < _Size; i++)
+        {
+            _TempArray[i] = OriginalArray[_Size - i - 1];
+        }
+
+        delete[] OriginalArray;
+        OriginalArray = _TempArray;
+    }
+
+    T GetItem (int idx) {
+        return OriginalArray[idx];
+    }
+
+    void Clear () {
+        _Size = 0;
+        _TempArray = new T[0];
+        delete [] OriginalArray;
+        OriginalArray = _TempArray;
+    }
 };
-
