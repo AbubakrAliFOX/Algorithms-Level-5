@@ -22,9 +22,11 @@ int main()
     cout << "\nArray Items: \n";
 
     MyDynamicArray.PrintList();
-    cout << MyDynamicArray.GetItem(4) << endl;
+    // cout << MyDynamicArray.GetItem(4) << endl;
 
+    // MyDynamicArray.Reverse();
+    // MyDynamicArray.PrintList();
 
-    MyDynamicArray.Reverse();
+    MyDynamicArray.DeleteItemAt(2);
     MyDynamicArray.PrintList();
 }
