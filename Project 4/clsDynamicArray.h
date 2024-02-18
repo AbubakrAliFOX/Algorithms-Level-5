@@ -179,7 +179,7 @@ public:
         {
             return false;
         }
-        
+
         _Size++;
         _TempArray = new T[_Size];
 
@@ -202,5 +202,39 @@ public:
         OriginalArray = _TempArray;
 
         return true;
+    }
+
+    bool InsertAfter(int idx, T value)
+    {
+        if (idx >= _Size)
+        {
+            return InsertAt(_Size - 1, value);
+        }
+        else
+        {
+            return InsertAt(idx + 1, value);
+        }
+    }
+
+    bool InsertBefore(int idx, T value)
+    {
+        if (idx < 1)
+        {
+            return InsertAt(0, value);
+        }
+        else
+        {
+            return InsertAt(idx - 1, value);
+        }
+    }
+
+    void InsertAtBeginning(T value)
+    {
+        InsertAt(0, value);
+    }
+
+    void InsertAtEnd(T value)
+    {
+        InsertAt(_Size, value);
     }
 };

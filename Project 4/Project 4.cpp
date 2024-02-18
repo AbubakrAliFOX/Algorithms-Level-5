@@ -32,7 +32,13 @@ int main()
     // cout << MyDynamicArray.DeleteItem(20) << endl;
     // MyDynamicArray.PrintList();
 
-    cout << MyDynamicArray.InsertAt(2, 200) << endl;
+    // cout << MyDynamicArray.InsertAt(2, 200) << endl;
+    // MyDynamicArray.PrintList();
+
+    cout << MyDynamicArray.InsertBefore(0, 200) << endl;
     MyDynamicArray.PrintList();
+
+    // MyDynamicArray.InsertAtEnd(200);
+    // MyDynamicArray.PrintList();
     
 }
