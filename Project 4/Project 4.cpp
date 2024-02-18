@@ -27,6 +27,6 @@ int main()
     // MyDynamicArray.Reverse();
     // MyDynamicArray.PrintList();
 
-    MyDynamicArray.DeleteItemAt(2);
+    MyDynamicArray.DeleteFirstItem();
     MyDynamicArray.PrintList();
 }
