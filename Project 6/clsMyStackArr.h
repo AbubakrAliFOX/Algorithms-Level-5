@@ -11,16 +11,16 @@ class clsMyStackArr : public clsMyQueueArr<T>
 public:
     void push(T value)
     {
-        clsMyQueue<T>::_List.InsertAtBeginning(value);
+        clsMyQueueArr<T>::_Arr.InsertAtBeginning(value);
     }
 
     T Top()
     {
-        return clsMyQueue<T>::front();
+        return clsMyQueueArr<T>::front();
     }
 
     T Bottom()
     {
-        return clsMyQueue<T>::back();
+        return clsMyQueueArr<T>::back();
     }
 };
