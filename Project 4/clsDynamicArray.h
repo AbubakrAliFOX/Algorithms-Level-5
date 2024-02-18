@@ -116,8 +116,13 @@ public:
         OriginalArray = _TempArray;
     }
 
-    void DeleteItemAt(int idx)
+    bool DeleteItemAt(int idx)
     {
+        if (idx < 0 || idx > _Size)
+        {
+            return false;
+        }
+        
         _Size--;
         _TempArray = new T[_Size];
 
@@ -135,6 +140,7 @@ public:
 
         delete[] OriginalArray;
         OriginalArray = _TempArray;
+        return true;
     }
 
     void DeleteFirstItem()
@@ -145,5 +151,25 @@ public:
     void DeleteLastItem()
     {
         DeleteItemAt(_Size - 1);
+    }
+
+    int Find(T value)
+    {
+        for (int i = 0; i < _Size; i++)
+        {
+            if (OriginalArray[i] == value)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    bool DeleteItem(T value)
+    {
+        int idx = Find(value);
+
+        return idx != -1 ? DeleteItemAt(Find(value)) : false; 
     }
 };

@@ -27,6 +27,8 @@ int main()
     // MyDynamicArray.Reverse();
     // MyDynamicArray.PrintList();
 
-    MyDynamicArray.DeleteFirstItem();
+    // MyDynamicArray.DeleteItem(20);
+
+    cout << MyDynamicArray.DeleteItem(20) << endl;
     MyDynamicArray.PrintList();
 }
